@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Botones</string>
+    <string name="frase">Escribe tu frase IEST:</string>
+    <string name="mostrar_mensaje">Mostrar</string>
+</resources>
