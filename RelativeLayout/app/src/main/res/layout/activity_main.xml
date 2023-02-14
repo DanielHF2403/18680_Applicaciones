@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/ivContinuara"
+        android:layout_width="180dp"
+        android:layout_height="120dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="-3dp"
+        android:layout_marginBottom="-44dp"
+        android:scaleType="centerCrop"
+        android:text="Hello World!"
+        app:srcCompat="@drawable/tbcontinue" />
+
+    <TextView
+        android:id="@+id/tvCanal"
+        android:text="Sintonizanos la proxima semana en:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="Canal 5"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:layout_below="@id/tvCanal"
+        android:layout_toStartOf="@id/ivContinuara"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/bnCambiar"
+        android:text="Cambiar"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_above="@id/tvCanal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#d00000" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/bnCambiar"
+        android:layout_above="@id/tvCanal"
+        android:layout_alignBottom="@id/bnCambiar"
+        android:layout_alignTop="@id/bnCambiar" />
+
+    <Spinner
+        android:entries="@array/programas"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
