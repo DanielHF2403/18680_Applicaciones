@@ -13,6 +13,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private var bnSuma : Button? = null
     private var bnResta : Button? = null
+    private var bnMulti : Button? = null
+    private var bnDivi : Button? = null
     private var etNumeroPrimero: EditText? = null
     private var etNumeroSegundo: EditText? = null
 
@@ -28,6 +30,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun inicializarVistas(){
         bnSuma = findViewById(R.id.bnSuma)
         bnResta = findViewById(R.id.bnResta)
+        bnMulti = findViewById(R.id.bnMulti)
+        bnDivi = findViewById(R.id.bnDivi)
         etNumeroPrimero = findViewById(R.id.etNumeroPrimero)
         etNumeroSegundo = findViewById(R.id.etNumeroSegundo)
     }
@@ -35,6 +39,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun asignarEventos(){
         bnSuma?.setOnClickListener(this)
         bnResta?.setOnClickListener(this)
+        bnMulti?.setOnClickListener(this)
+        bnDivi?.setOnClickListener(this)
     }
 
 
@@ -78,6 +84,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 //}else{
                     //Snackbar.make(miVista,"No agregaste nada", Snackbar.LENGTH_LONG).show()
                 //}
+            }
+            R.id.bnMulti -> {
+                val multi = aritmetica.multiplicacion(num1,num2)
+                val mensaje = Mensajes("El resultado es $multi",this)
+                mensaje.mostarToast()
+            }
+            R.id.bnDivi -> {
+                val divi = aritmetica.division(num1,num2)
+                val mensaje = Mensajes("El resultado es $divi",this)
+                mensaje.mostrarSnackbar(miVista)
             }
         }
     }

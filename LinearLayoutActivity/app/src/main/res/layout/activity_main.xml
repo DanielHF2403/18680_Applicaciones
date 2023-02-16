@@ -63,5 +63,33 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/bnMulti"
+            android:text="@string/multi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="32dp"
+            android:backgroundTint="@color/bnSuma">
+
+        </Button>
+
+        <Button
+            android:id="@+id/bnDivi"
+            android:text="@string/divi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:backgroundTint="@color/bnResta">
+
+        </Button>
+
+    </LinearLayout>
+
 
 </LinearLayout>

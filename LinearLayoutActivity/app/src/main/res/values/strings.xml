@@ -4,4 +4,6 @@
     <string name="num1">Dame un numero</string>
     <string name="suma">Suma</string>
     <string name="resta">Resta</string>
+    <string name="multi">Multi</string>
+    <string name="divi">Divi</string>
 </resources>
