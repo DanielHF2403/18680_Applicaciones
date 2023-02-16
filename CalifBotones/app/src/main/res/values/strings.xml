@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">CalifBotones</string>
+    <string name="materia">Materia Programación</string>
+    <string name="reprobado">Reprobado</string>
+    <string name="aprobado">Aprobado</string>
+</resources>
