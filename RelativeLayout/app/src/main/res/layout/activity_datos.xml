@@ -91,7 +91,7 @@
             android:layout_height="match_parent"
             android:backgroundTint="#ff8fa3"
             android:layout_span="2"
-            android:text="Boton"/>
+            android:text="Back"/>
 
 
     </TableRow>
