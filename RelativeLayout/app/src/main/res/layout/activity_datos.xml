@@ -87,6 +87,7 @@
         >
 
         <Button
+            android:id="@+id/bnback"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="#ff8fa3"

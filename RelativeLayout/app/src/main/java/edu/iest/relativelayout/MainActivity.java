@@ -17,6 +17,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private ImageView ivContinuara;
+    private String texto,programa;
+    private Intent i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             public void onClick(View view) {
                 //Aquí la logica de que hacer al hacer click
                 //Obtendremos el valor del edittext y lo asignaremos al TextView inferior
-                String texto = etCanal.getText().toString();
+                texto = etCanal.getText().toString();
                 if (texto.isEmpty()){
                     Toast.makeText(MainActivity.this,"Escribe en la parte de arriba", Toast.LENGTH_LONG).show();
                 }else{
@@ -49,7 +51,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         ivContinuara.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, DatosActivity.class);
+                i = new Intent(MainActivity.this, DatosActivity.class);
+                i.putExtra("Canal", texto);
+                i.putExtra("Programa", programa);
                 startActivity(i);
                 finish();
             }
@@ -59,8 +63,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int posicion, long l) {
-        String programa = adapterView.getItemAtPosition(posicion).toString();
-        Snackbar.make(adapterView, "Programa seleccionado" + programa,Snackbar.LENGTH_LONG).show();
+        programa = adapterView.getItemAtPosition(posicion).toString();
+        Snackbar.make(adapterView, "Programa seleccionado " + programa,Snackbar.LENGTH_LONG).show();
 
         if (posicion == 0){
             ivContinuara.setImageResource(R.drawable.tobecontinued);

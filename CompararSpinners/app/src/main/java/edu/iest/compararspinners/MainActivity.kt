@@ -40,14 +40,18 @@ class MainActivity : Activity(), AdapterView.OnItemSelectedListener {
 
         binding.bnComparar.setOnClickListener {
             val a = AlertDialog.Builder(this)
-            if(Integer.valueOf(num1!!) >= Integer.valueOf(num2!!)){
+            if(Integer.valueOf(num1!!) > Integer.valueOf(num2!!)){
                 numMayor = num1
-            } else {
+            } else if(Integer.valueOf(num1!!) < Integer.valueOf(num2!!)) {
                 numMayor = num2
+            } else {
+                Toast.makeText(this, "Son iguales",Toast.LENGTH_LONG).show()
             }
-            a.setTitle("Calcular").setMessage("El numero mayor es: $numMayor").setCancelable(false).setPositiveButton("ok", DialogInterface.OnClickListener(){
-                DialogInterface, i -> Toast.makeText(this, "Gracias por participar",Toast.LENGTH_LONG).show()
-            }).show()
+            if (numMayor != null){
+                    a.setTitle("Calcular").setMessage("El numero mayor es: $numMayor").setCancelable(false).setPositiveButton("ok", DialogInterface.OnClickListener(){
+                        DialogInterface, i -> Toast.makeText(this, "Gracias por participar",Toast.LENGTH_LONG).show()
+                }).show()
+                }
         }
 
 
