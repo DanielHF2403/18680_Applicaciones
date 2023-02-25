@@ -1,8 +1,10 @@
 package edu.iest.relativelayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -29,6 +31,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         TextView tvCanal = findViewById(R.id.tvCanal);
         Spinner spProgramas = findViewById(R.id.spPrograma);
         ivContinuara = findViewById(R.id.ivContinuara);
+
+        //cambiar colores sin usar xml (solo colores dentro del archivo colors)
+        //tvCanal.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_500));
+        //tvCanal.setTextColor(ContextCompat.getColor(this, R.color.black));
+
+        //color mediante hexadecimal
+        //tvCanal.setBackgroundColor(Color.parseColor("FFF012"));
+        //tvCanal.setBackgroundColor(Color.RED);
+
 
         spProgramas.setOnItemSelectedListener(this);
 
