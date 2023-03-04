@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tvCapital"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#023e8a"
+        android:text="La capital del cine"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="167dp" />
+
+    <TextView
+        android:id="@+id/tvCinepolis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0077b6"
+        android:text="Cinépolis Altama"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivAntMan"
+        android:layout_width="171dp"
+        android:layout_height="253dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/antman" />
+
+    <TextView
+        android:id="@+id/tvTituloPeli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="38dp"
+        android:text="Ant-Man and The Wasp: "
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ivAntMan"
+        app:layout_constraintTop_toBottomOf="@+id/tvCinepolis" />
+
+    <TextView
+        android:id="@+id/tvTituloPeli2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Quantunmania"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/ivAntMan"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloPeli" />
+
+    <TextView
+        android:id="@+id/tvdescrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="84dp"
+        android:text="Ant-Man and The Wasp: "
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        app:layout_constraintStart_toEndOf="@+id/ivAntMan"
+        app:layout_constraintTop_toBottomOf="@+id/tvCinepolis" />
+
+    <TextView
+        android:id="@+id/tvdescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Quantunmania (EUA, 2023)"
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        app:layout_constraintStart_toEndOf="@+id/ivAntMan"
+        app:layout_constraintTop_toBottomOf="@+id/tvdescrip" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="8dp"
+        android:textSize="13dp"
+        android:textColor="@color/white"
+        android:background="#6c757d"
+        android:text="B"
+        app:layout_constraintStart_toEndOf="@+id/ivAntMan"
+        app:layout_constraintTop_toBottomOf="@+id/tvdescripcion" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="13dp"
+        android:textColor="@color/white"
+        android:background="@color/black"
+        android:text="125 min"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/tvdescripcion" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textSize="13dp"
+        android:textColor="@color/white"
+        android:background="#023e8a"
+        android:text="Aventura, Ciencia Ficción"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/tvdescripcion" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Por favor seleccione un horario:"
+        android:textColor="#090909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivAntMan" />
+
+    <Button
+        android:id="@+id/bnCompra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="232dp"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#ffbe0b"
+        android:text="COMPRAR BOLETOS"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/tvCapital"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Spinner
+        android:id="@+id/sphorarios"
+        android:entries="@array/horarios"
+        android:layout_width="244dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
