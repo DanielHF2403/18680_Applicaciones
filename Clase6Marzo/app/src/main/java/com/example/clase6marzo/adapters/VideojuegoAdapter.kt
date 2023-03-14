@@ -1,7 +1,9 @@
 package com.example.clase6marzo.adapters
 
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -9,7 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.clase6marzo.R
 import com.example.clase6marzo.models.Videojuego
 
-class VideojuegoAdapter(videojuego: ArrayList<Videojuego>, contexto: Context){
+class VideojuegoAdapter(videojuego: ArrayList<Videojuego>, contexto: Context)
+    :RecyclerView.Adapter<VideojuegoAdapter.ContenedorDeVista>() {
     var inner_videojuegos: ArrayList<Videojuego> = videojuego
     var inner_context: Context = contexto
 
@@ -28,5 +31,22 @@ class VideojuegoAdapter(videojuego: ArrayList<Videojuego>, contexto: Context){
             bnCompra = view.findViewById(R.id.bnComprar)
 
         }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContenedorDeVista {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_segunda_vista, parent,false)
+        return ContenedorDeVista(view)
+    }
+
+    override fun getItemCount(): Int {
+        return inner_videojuegos.size
+    }
+
+    override fun onBindViewHolder(holder: ContenedorDeVista, position: Int) {
+        val videojuego: Videojuego = inner_videojuegos.get(position)
+        holder.tvNombre.text = videojuego.nombre
+        holder.tvConsola.text = videojuego.consola
+        holder.tvPrecio.text = videojuego.precio.toString()
+        holder.ivFoto.setImageResource(videojuego.imagen)
     }
 }

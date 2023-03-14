@@ -8,6 +8,7 @@
     tools:context=".ListaGamesActivity">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerJuegos"
         tools:listitem="@layout/activity_segunda_vista"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
