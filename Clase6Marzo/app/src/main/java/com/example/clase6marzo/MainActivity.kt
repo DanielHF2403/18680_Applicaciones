@@ -18,12 +18,21 @@ import androidx.appcompat.app.ActionBar
 class MainActivity : AppCompatActivity() {
     private lateinit var tvBienvenido: TextView
     private lateinit var etNombre: EditText
+    private lateinit var etnEdad: EditText
+    private lateinit var etnAltura: EditText
+    private lateinit var etnMonedero: EditText
     private lateinit var bnGuardar: Button
     private lateinit var switchPreferencias: Switch
     private val NOMBRE_KEY = "nombre"
+    private val EDAD_KEY = "edad"
+    private val ALTURA_KEY = "altura"
+    private val MONEDERO_KEY = "monedero"
     private val SWITCH_KEY = "switch_estado"
     private val NOMBRE_INSTANCIA = "nombre_instancia"
     private var nombre: String = ""
+    private var edad: Int = 0
+    private var altura: Float = 0.0f
+    private var monedero: Float = 0.0f
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,8 +54,14 @@ class MainActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         Log.d("PREFERENCIAS", "onSaveInstanceState")
         outState.putString(NOMBRE_KEY, nombre )
+        outState.putInt(EDAD_KEY, edad )
+        outState.putFloat(ALTURA_KEY, altura )
+        outState.putFloat(MONEDERO_KEY, monedero )
         outState?.run {
             putString(NOMBRE_KEY, nombre)
+            putInt(EDAD_KEY, edad)
+            putFloat(ALTURA_KEY, altura)
+            putFloat(MONEDERO_KEY, monedero)
         }
 // call superclass to save any view hierarchy
         super.onSaveInstanceState(outState)
@@ -91,13 +106,22 @@ class MainActivity : AppCompatActivity() {
         etNombre = findViewById(R.id.etNombre)
         bnGuardar = findViewById(R.id.bnGuardar)
         switchPreferencias = findViewById(R.id.swPref)
+        etnEdad = findViewById(R.id.etnEdad)
+        etnAltura = findViewById(R.id.etnAltura)
+        etnMonedero = findViewById(R.id.etnMonedero)
 
         bnGuardar.setOnClickListener {
             nombre = etNombre.text.toString()
+            edad = etnEdad.text.toString().toInt()
+            altura = etnAltura.text.toString().toFloat()
+            monedero = etnMonedero.text.toString().toFloat()
             cambiarTextoBienvenida(nombre)
             val miSharedPreferences = getSharedPreferences("PERSISTENCIA", MODE_PRIVATE)
             val editor = miSharedPreferences.edit()
             editor.putString(NOMBRE_KEY, nombre)
+            editor.putInt(EDAD_KEY, edad)
+            editor.putFloat(ALTURA_KEY, altura)
+            editor.putFloat(MONEDERO_KEY, monedero)
             editor.apply()
         }
 

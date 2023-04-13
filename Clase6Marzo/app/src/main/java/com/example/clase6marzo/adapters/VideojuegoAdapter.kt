@@ -16,7 +16,7 @@ class VideojuegoAdapter(videojuego: ArrayList<Videojuego>, contexto: Context)
     var inner_videojuegos: ArrayList<Videojuego> = videojuego
     var inner_context: Context = contexto
 
-    inner class ContenedorDeVista(view: View): RecyclerView.ViewHolder(view){
+    inner class ContenedorDeVista(view: View): RecyclerView.ViewHolder(view), View.OnClickListener {
         //Aqui haremos el inflate del layout
         val tvNombre : TextView
         val tvPrecio : TextView
@@ -30,6 +30,15 @@ class VideojuegoAdapter(videojuego: ArrayList<Videojuego>, contexto: Context)
             ivFoto = view.findViewById(R.id.ivPoke)
             bnCompra = view.findViewById(R.id.bnComprar)
 
+            bnCompra.setOnClickListener(this)
+
+        }
+
+        override fun onClick(p0: View?) {
+            if (adapterPosition >= 0){
+                val videojuego: Videojuego = inner_videojuegos.get(adapterPosition)
+                videojuego.nombre
+            }
         }
     }
 
