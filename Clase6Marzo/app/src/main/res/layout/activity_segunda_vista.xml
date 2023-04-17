@@ -41,6 +41,31 @@
         app:layout_constraintTop_toBottomOf="@+id/tvPoke" />
 
     <TextView
+        android:id="@+id/tvESRB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:text="ESRB"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivPoke" />
+
+    <TextView
+        android:id="@+id/tvClasificacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:text="ESRB"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivPoke"
+        app:layout_constraintVertical_bias="0.483" />
+
+    <TextView
         android:id="@+id/tvPrecio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,8 +73,8 @@
         android:layout_marginEnd="32dp"
         android:text="130.00 MXN"
         android:textColor="@color/black"
-        android:textStyle="bold"
         android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPoke" />
 
@@ -59,8 +84,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
         android:layout_marginEnd="32dp"
-        android:text="Comprar"
         android:backgroundTint="#8338ec"
+        android:text="Comprar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPrecio" />
 

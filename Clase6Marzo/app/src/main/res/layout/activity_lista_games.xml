@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,10 +7,23 @@
     android:orientation="vertical"
     tools:context=".ListaGamesActivity">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/border"
+        android:contentDescription="Preferencias" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RecyclerJuegos"
         tools:listitem="@layout/activity_segunda_vista"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
 
-</LinearLayout>
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+</RelativeLayout>

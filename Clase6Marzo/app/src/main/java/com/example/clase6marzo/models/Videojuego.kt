@@ -5,5 +5,6 @@ data class Videojuego(
     var nombre: String,
     var precio: Float,
     var consola: String,
-    var imagen: Int
+    var imagen: Int,
+    var rate: String
 )
