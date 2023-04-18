@@ -73,6 +73,9 @@ class MainActivity : AppCompatActivity() {
         if(TextUtils.isEmpty(nombre)){
             val miSharedPreferences = getSharedPreferences("PERSISTENCIA", MODE_PRIVATE)
             nombre = miSharedPreferences.getString(NOMBRE_KEY, "").toString()
+            edad = miSharedPreferences.getInt(EDAD_KEY, 0)
+            altura = miSharedPreferences.getFloat(NOMBRE_KEY, 0.0f)
+            monedero = miSharedPreferences.getFloat(NOMBRE_KEY, 0.0f)
 
         }
 

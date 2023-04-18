@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Clase6Marzo"
         tools:targetApi="31">
         <activity
+            android:name=".MostrarPreferencias"
+            android:exported="false" />
+        <activity
             android:name=".ListaGamesActivity"
             android:exported="false" />
         <activity

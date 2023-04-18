@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.clase6marzo.R
 import com.example.clase6marzo.models.Videojuego
@@ -38,6 +39,9 @@ class VideojuegoAdapter(videojuego: ArrayList<Videojuego>, contexto: Context)
             if (adapterPosition >= 0){
                 val videojuego: Videojuego = inner_videojuegos.get(adapterPosition)
                 videojuego.nombre
+
+                //logica con el dato
+                Toast.makeText(inner_context, "Hola", Toast.LENGTH_SHORT).show()
             }
         }
     }
