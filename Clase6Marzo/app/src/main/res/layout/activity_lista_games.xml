@@ -8,14 +8,14 @@
     tools:context=".ListaGamesActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fabPreferencias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
-        android:src="@drawable/preferencias"
-        android:layout_marginBottom="32dp"
-        android:layout_marginRight="32dp"
-        android:contentDescription="Preferencias" />
+        android:layout_marginRight="120dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="Preferencias"
+        android:src="@drawable/preferencias" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RecyclerJuegos"

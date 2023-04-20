@@ -1,6 +1,7 @@
 package com.example.clase6marzo
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -74,8 +75,8 @@ class MainActivity : AppCompatActivity() {
             val miSharedPreferences = getSharedPreferences("PERSISTENCIA", MODE_PRIVATE)
             nombre = miSharedPreferences.getString(NOMBRE_KEY, "").toString()
             edad = miSharedPreferences.getInt(EDAD_KEY, 0)
-            altura = miSharedPreferences.getFloat(NOMBRE_KEY, 0.0f)
-            monedero = miSharedPreferences.getFloat(NOMBRE_KEY, 0.0f)
+            altura = miSharedPreferences.getFloat(ALTURA_KEY, 0.0f)
+            monedero = miSharedPreferences.getFloat(MONEDERO_KEY, 0.0f)
 
         }
 
@@ -126,6 +127,9 @@ class MainActivity : AppCompatActivity() {
             editor.putFloat(ALTURA_KEY, altura)
             editor.putFloat(MONEDERO_KEY, monedero)
             editor.apply()
+            val s = Intent(this, ListaGamesActivity::class.java)
+            startActivity(s)
+            finish()
         }
 
     }
