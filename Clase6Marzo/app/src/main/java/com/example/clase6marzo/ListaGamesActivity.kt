@@ -30,5 +30,6 @@ class ListaGamesActivity : AppCompatActivity() {
             startActivity(s)
             finish()
         }
+
     }
 }
