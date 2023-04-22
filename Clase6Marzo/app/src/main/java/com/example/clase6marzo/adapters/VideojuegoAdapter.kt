@@ -1,6 +1,9 @@
 package com.example.clase6marzo.adapters
 
+import android.app.Activity
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +12,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.clase6marzo.ListaGamesActivity
 import com.example.clase6marzo.R
 import com.example.clase6marzo.models.Videojuego
 
@@ -39,11 +43,17 @@ class VideojuegoAdapter(videojuego: ArrayList<Videojuego>, contexto: Context)
 
         override fun onClick(p0: View?) {
             if (adapterPosition >= 0){
-                val videojuego: Videojuego = inner_videojuegos.get(adapterPosition)
-                videojuego.nombre
 
-                //logica con el dato
-                Toast.makeText(inner_context, "Hola", Toast.LENGTH_SHORT).show()
+                val sharedPref = inner_context.getSharedPreferences("PERSISTENCIA", MODE_PRIVATE)
+
+                val edad = sharedPref.getInt("edad", 0)
+
+                val juegos: Videojuego = inner_videojuegos.get(adapterPosition)
+                if ((juegos.rate == "Mature" && edad <= 16 )|| (juegos.rate == "Teen" && edad <=11)){
+                    Toast.makeText(inner_context, "No puedes comprar el juego ${juegos.nombre}.", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(inner_context, "Gracias por comprar el juego ${juegos.nombre}", Toast.LENGTH_LONG).show()
+                }
             }
         }
     }

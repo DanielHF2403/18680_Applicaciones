@@ -14,7 +14,7 @@ class FakerVideojuegos {
         videogames.add(Videojuego(4, "The Last of Us", 900F, "PS4", R.drawable.thelastofus, "Mature"))
         videogames.add(Videojuego(5, "Borderlands 2", 400F, "PC", R.drawable.borderlands, "Mature"))
         videogames.add(Videojuego(6, "Code Vein", 1000F, "Xbox One", R.drawable.codevein, "Mature"))
-        videogames.add(Videojuego(7, "Gears Of War 3", 300F, "Xbox 360", R.drawable.gears3,"mature"))
+        videogames.add(Videojuego(7, "Gears Of War 3", 300F, "Xbox 360", R.drawable.gears3,"Mature"))
         videogames.add(Videojuego(8, "Halo Reach", 300F, "Xbox 360", R.drawable.haloreach, "Mature"))
         return videogames
     }
