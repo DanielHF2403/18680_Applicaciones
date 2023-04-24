@@ -1,6 +1,7 @@
 package edu.iest.sqlite
 
 import android.content.ContentValues
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -53,7 +54,9 @@ class Activity_Agregar : AppCompatActivity(), AdapterView.OnItemSelectedListener
             id = baseDatos.insertar(contenido).toInt()
             if (id > 0) {
                 Toast.makeText(this, "Anime " + nombreAnime + " agregado", Toast.LENGTH_LONG).show()
-                finish()
+                //finish()
+                val s = Intent(this, ActivityListado::class.java)
+                startActivity(s)
             } else
                 Toast.makeText(this, "No se pudo agregar el anime :(", Toast.LENGTH_LONG).show()
             baseDatos.cerrarConexion()

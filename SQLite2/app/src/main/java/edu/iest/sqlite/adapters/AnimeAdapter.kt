@@ -12,9 +12,9 @@ import edu.iest.sqlite.db.ManejadorBaseDatos
 import edu.iest.sqlite.interfaces.AnimeInterface
 import edu.iest.sqlite.models.Anime
 
-class AnimeAdapter(contexto: Context, var listadeAnime: ArrayList<Anime>, animeInterface: ActivityListado) : BaseAdapter() {
+class AnimeAdapter(contexto: Context, var listadeAnime: ArrayList<Anime>, animeInterface: AnimeInterface) : BaseAdapter() {
     var contexto: Context? = contexto
-    var animeInterface: AnimeInterface? = AnimeInterface
+    var animeInterface: AnimeInterface? = animeInterface
     override fun getCount(): Int {
         return listadeAnime.size
     }

@@ -59,7 +59,7 @@ class ActivityEditar : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         tvAnime = findViewById(R.id.tvAnime)
         bnGuardar.setOnClickListener {
             var caps_actual: Int
-            caps_actual = etAnime.text.toString().toInt()
+            caps_actual = etCaps.text.toString().toInt()
             actualizarJuego(etAnime.text.toString(), caps_actual, TemporadaSeleccionada)
         }
     }

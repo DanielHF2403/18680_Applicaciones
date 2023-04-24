@@ -14,15 +14,15 @@ import com.example.clase6marzo.models.FakerVideojuegos
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ListaGamesActivity : AppCompatActivity() {
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: VideojuegoAdapter
+    private lateinit var recycler: RecyclerView
     private lateinit var layoutManager: RecyclerView.LayoutManager
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_games)
         val juegos = FakerVideojuegos().getVideogames()
-        val recycler = findViewById<RecyclerView>(R.id.RecyclerJuegos)
+        recycler = findViewById<RecyclerView>(R.id.RecyclerJuegos)
 
         val Cantidad_Columnas = 2
         var administradorDeLayouts = LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false)
@@ -45,23 +45,23 @@ class ListaGamesActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.menu_vertical -> {
                 // Se cambia a un LinearLayoutManager vertical
-                layoutManager = LinearLayoutManager(this)
-                recyclerView.layoutManager = layoutManager
+                layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+                recycler.layoutManager = layoutManager
             }
             R.id.menu_horizontal -> {
                 // Se cambia a un LinearLayoutManager horizontal
                 layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-                recyclerView.layoutManager = layoutManager
+                recycler.layoutManager = layoutManager
             }
             R.id.menu_grid_2 -> {
                 // Se cambia a un GridLayoutManager con 2 columnas
                 layoutManager = GridLayoutManager(this, 2)
-                recyclerView.layoutManager = layoutManager
+                recycler.layoutManager = layoutManager
             }
             R.id.menu_grid_3 -> {
                 // Se cambia a un GridLayoutManager con 3 columnas
                 layoutManager = GridLayoutManager(this, 3)
-                recyclerView.layoutManager = layoutManager
+                recycler.layoutManager = layoutManager
             }
         }
 

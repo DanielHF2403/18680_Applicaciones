@@ -19,7 +19,7 @@ import edu.iest.sqlite.db.ManejadorBaseDatos
 import edu.iest.sqlite.models.Anime
 import edu.iest.sqlite.interfaces.AnimeInterface
 
-class ActivityListado : AppCompatActivity() {
+class ActivityListado : AppCompatActivity(), AnimeInterface {
 
     private lateinit var listView: ListView
     private var listaDeAnimes = ArrayList<Anime>()
@@ -107,7 +107,8 @@ class ActivityListado : AppCompatActivity() {
                 listaDeAnimes.add(anime)
             }while(cursor.moveToNext())
         }
-        val adapter = AnimeAdapter(this, listaDeAnimes,this)
+        //val adapter = AnimeAdapter(this, listaDeAnimes,this)
+        val adapter = AnimeAdapter(this, listaDeAnimes, this)
         listView.adapter = adapter
 
     }
