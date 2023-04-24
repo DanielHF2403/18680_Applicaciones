@@ -11,6 +11,7 @@ import android.widget.*
 import com.example.retrofit.models.ImageRandom
 import com.example.retrofit.models.ListBreed
 import com.example.retrofit.network.API
+import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

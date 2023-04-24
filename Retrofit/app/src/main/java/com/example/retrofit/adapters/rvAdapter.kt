@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.retrofit.R
 import com.example.retrofit.models.ImageRandom
+import com.squareup.picasso.Picasso
 
 
 class rvAdapter(private val mList: ArrayList<ImageRandom>)

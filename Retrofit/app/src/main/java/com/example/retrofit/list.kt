@@ -2,7 +2,7 @@ package com.example.retrofit
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.telecom.Call
+import retrofit2.Call
 import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
@@ -12,7 +12,8 @@ import com.example.retrofit.adapters.rvAdapter
 import com.example.retrofit.models.ImageRandom
 import com.example.retrofit.models.ListBreed
 import com.example.retrofit.network.API
-import okhttp3.Response
+import retrofit2.Response
+import retrofit2.Callback
 
 
 class list : AppCompatActivity() {
@@ -40,8 +41,7 @@ class list : AppCompatActivity() {
 
     private fun GetDogs(raza: String){
 
-        apiCall.listaImagenesDePerrosPorRaza("$raza").enqueue(/* callback = */ object : Callback<ListBreed>,
-            retrofit2.Callback<ListBreed> {
+        apiCall.listaImagenesDePerrosPorRaza("$raza").enqueue(/* callback = */ object : Callback<ListBreed> {
 
             // @Override obtiene la respuesta/resultado
             override fun onResponse(call: Call<ListBreed>, response: Response<ListBreed>) {
