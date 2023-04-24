@@ -112,12 +112,12 @@ class ActivityListado : AppCompatActivity() {
 
     }
 
-    fun AnimeEliminado() {
+    override fun AnimeEliminado() {
         Log.d("PRUEBAS", "AnimeEliminado")
         traerMisAnimes()
     }
 
-    fun editarAnime(anime: Anime) {
+    override fun editarAnime(anime: Anime) {
         Log.d("PRUEBAS", "editar Anime "+anime.id)
         val intent = Intent(this, ActivityEditar::class.java)
         intent.putExtra("id",anime.id)
