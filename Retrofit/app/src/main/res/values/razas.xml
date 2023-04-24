@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="misRazas">
+        <item>beagle</item>
+        <item>dachshund</item>
+        <item>russell terrier</item>
+        <item>boxer</item>
+        <item>germanshepherd</item>
+    </string-array>
+
+</resources>
